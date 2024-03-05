@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box; /* Added to include padding and border in the element's total width and height */
+}
+
 body {
     margin: auto;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -6,36 +10,38 @@ body {
 .header {
     background-color: #1F2937;
     color: #E5E7EB;
-    padding: 0 300px;
+    padding: 0 20px; /* Changed padding for responsiveness */
 }
 .header-top {
     display: flex;
     color: white;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
 }
 
 .header-bot {
+    align-self: center;
     display: flex;
-    padding: 70px 0;
-    justify-content: space-between;
+    padding: 30px 0; /* Changed padding for responsiveness */
+    justify-content: space-around;
 }
 
 .header-bot-left {
     display: flex;
     flex-direction: column;
-    width: 350px;
+    width: 50%; /* Changed to a percentage-based width */
 }
 .header-bot-right {
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: gray;
-    height: auto;
-    width: 500px;
+    height: 20vh;
+    width: 40vh; /* Changed to a percentage-based width */
 }
 
 .header-bot-left button {
+    align-self: center;
     margin-top: 28px;
     color: white;
     background-color: rgb(100, 100, 255);
@@ -59,6 +65,7 @@ a {
     color: white;
 }
 
+
 .container-one {
     display: flex;
     justify-content: space-evenly;
@@ -76,31 +83,21 @@ a {
 
 .container-two{
     color: #1F2937;
-    padding: 1em 11em;
+    padding: 1em 5%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: 36px;
+    font-size: 2vw;
     font-style: italic;
     background-color: #E5E7EB;
 }
 
-.img {
-    border: 1px red solid;
-}
-
-.container-two footer {
-    font-weight: bold;
-    display: inline;
-    align-self: flex-end;
-}
-
 .container-three {
-    padding: 2em 5em;
-    margin: 4em 12em;
+    padding: 2vw 5vw;
+    margin: 4vw 12vw;
     border-radius: 10px;
-    font-size: 24px;
+    font-size: 1vw;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -115,6 +112,7 @@ a {
     border: white solid 2px;
     border-radius: 10px;
     background-color: #3882F6;
+    min-width: 120px;
 }
 
 .footer {
@@ -124,4 +122,51 @@ a {
     align-items: center;
     background-color: #1F2937;
     color: white;
+}
+
+@media only screen and (max-width: 768px) {
+    .header {
+        padding: 0 10px; /* Adjusted padding for responsiveness */
+    }
+    .header-top {
+        flex-direction: column; /* Change to column layout for smaller screens */
+        align-items: center; /* Center align items */
+    }
+    .header-bot {
+        flex-direction: column; /* Change to column layout for smaller screens */
+        align-items: center; /* Center align items */
+        padding: 20px 0; /* Adjusted padding for responsiveness */
+    }
+    .header-bot-left {
+        width: 100%; /* Make .header-bot-left span the full width */
+        text-align: center; /* Center align text */
+    }
+    .header-bot-right {
+        display: none; /* Hide .header-bot-right on smaller screens */
+    }
+    .container-one {
+        flex-direction: column; /* Change to column layout for smaller screens */
+        align-items: center; /* Center align items */
+        margin-bottom: 50px; /* Adjusted margin for responsiveness */
+    }
+    .first, .second, .third {
+        margin: 20px 0 ; /* Adjusted margin for responsiveness */
+        width: 100px; /* Adjusted width for responsiveness */
+        height: 100px; /* Adjusted height for responsiveness */
+    }
+    .container-two {
+        font-size: 16px; /* Adjusted font size for smaller screens */
+    }
+    .container-three {
+        padding: 10px; /* Adjusted padding for responsiveness */
+        margin: 20px; /* Adjusted margin for responsiveness */
+        font-size: 14px; /* Adjusted font size for smaller screens */
+    }
+    .container-three button {
+        font-size: 14px; /* Adjusted font size for smaller screens */
+        min-width: auto; /* Remove minimum width */
+    }
+    .footer {
+        height: 50px; /* Adjusted height for responsiveness */
+    }
 }
